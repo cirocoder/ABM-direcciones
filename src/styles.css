@@ -1,0 +1,231 @@
+/* Variables visuales globales y estilos base de la aplicación. */
+:root {
+  font-family: sans-serif;
+  color: #245e92;
+  background: #e4e6e7;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+/* Elimina el margen predeterminado del documento. */
+body {
+  margin: 0;
+}
+main {
+  width: min(880px, calc(100% - 2rem));
+  margin: 3rem auto;
+}
+/* Encabezado principal de la pantalla. */
+header {
+  background: #245e92;
+  color: white;
+  padding: 2rem;
+  border-radius: 18px;
+}
+header p:last-child {
+  margin-bottom: 0;
+  color: #b8c7d4;
+}
+h1 {
+  margin: 0.25rem 0;
+  font-size: clamp(1.8rem, 5vw, 2.65rem);
+}
+h2 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+/* Textos secundarios, mensajes y ayudas de los campos. */
+.muted,
+small {
+  color: #4f5d6a;
+}
+.muted {
+  margin: 0.25rem 0 0;
+}
+small {
+  display: block;
+}
+/* Distribución y apariencia de los botones de los diálogos. */
+.dialog-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+/* Tipografía compartida por controles y botones. */
+button,
+input,
+select {
+  font: inherit;
+}
+/* Estilos base y estados interactivos de los botones. */
+button {
+  border: 1px solid #9ea9b2;
+  border-radius: 8px;
+  padding: 0.55rem 0.85rem;
+  color: inherit;
+  background: white;
+  font-weight: 650;
+  cursor: pointer;
+}
+button:hover {
+  background: #eaf2ed;
+}
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid #245e92;
+  outline-offset: 2px;
+}
+button:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+/* Variantes de acción principal y acción peligrosa. */
+.primary {
+  background: #1d4c75;
+  color: white;
+  border-color: #1d4c75;
+}
+.primary:hover {
+  background: #173c5d;
+}
+.danger {
+  color: white;
+  background: #9b2929;
+  border-color: #9b2929;
+}
+.danger:hover {
+  background: #7d2020;
+}
+/* Colores para errores o acciones destructivas en texto. */
+.danger-text,
+.error {
+  color: #932a2a;
+}
+/* Contenedores principales y encabezados de sección. */
+.panel {
+  margin-top: 1.25rem;
+  background: white;
+  border: 1px solid #d9e4de;
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.section-heading .eyebrow {
+  color: #1b3953;
+}
+/* Tabla de registros y sus celdas. */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+}
+th,
+td {
+  text-align: left;
+  padding: 0.75rem 0.5rem;
+  border-bottom: 1px solid #d9e4de;
+  overflow-wrap: anywhere;
+}
+th {
+  background: #c6d2de;
+}
+th:last-child {
+  width: 15rem;
+}
+.row-actions button {
+  margin: 0.15rem 0.35rem 0.15rem 0;
+}
+/* Estados sin registros y mensajes informativos. */
+.empty {
+  border: 1px solid #9ba8b5;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 0;
+}
+.status:empty {
+  margin: 0;
+}
+.status {
+  color: #183d5e;
+  margin-bottom: 0;
+}
+/* Ventana modal nativa y su fondo. */
+dialog {
+  width: min(520px, calc(100% - 2rem));
+  max-height: calc(100% - 2rem);
+  border: 1px solid #dfe5ea;
+  border-radius: 14px;
+  padding: 1.5rem;
+  color: inherit;
+}
+dialog::backdrop {
+  background: #0e2d49;
+}
+/* Encabezado y botón de cierre del modal. */
+.dialog-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.close-button {
+  font-size: 1.5rem;
+  line-height: 1;
+  padding: 0.25rem 0.5rem;
+}
+/* Campos del formulario y adaptación de sus columnas. */
+select:disabled {
+  background: #f0f4f1;
+}
+.fields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+.wide {
+  grid-column: 1 / -1;
+}
+/* Etiquetas, inputs y selects del formulario. */
+label {
+  display: block;
+  font-weight: 650;
+  margin-bottom: 0.2rem;
+}
+input,
+select {
+  color: inherit;
+  background: white;
+  width: 100%;
+  border: 1px solid #a8b6c3;
+  border-radius: 7px;
+  padding: 0.45rem 0.6rem;
+}
+.dialog-actions {
+  justify-content: flex-end;
+  margin-top: 1.25rem;
+}
+/* Ajustes responsive para pantallas pequeñas. */
+@media (max-width: 540px) {
+  main {
+    margin: 1rem auto;
+  }
+  header,
+  .panel,
+  dialog {
+    padding: 1rem;
+  }
+  th:last-child {
+    width: 7.25rem;
+  }
+}
